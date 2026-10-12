@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Calculator</h2>
+
+    <input id="a" type="number" placeholder="First number">
+    <input id="b" type="number" placeholder="Second number">
+
+    <button onclick="calc('+')">+</button>
+    <button onclick="calc('-')">-</button>
+    <button onclick="calc('*')">*</button>
+    <button onclick="calc('/')">/</button>
+
+    <h3 id="result">Result: </h3>
+
+    <script>
+        function calc(op) {
+            let a = Number(document.getElementById("a").value);
+            let b = Number(document.getElementById("b").value);
+            let r;
+
+            if (op == '+') r = a + b;
+            else if (op == '-') r = a - b;
+            else if (op == '*') r = a * b;
+            else r = b != 0 ? a / b : "Cannot divide by zero";
+
+            document.getElementById("result").innerHTML = "Result: " + r;
+        }
+    </script>
+</body>
+</html>
